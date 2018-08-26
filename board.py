@@ -1,21 +1,21 @@
 import string
 import random
-initPoints = {"AEIOULNSTR":1, "DG":2, "BCMP": 3, "FHVWY":4, "K":5, "JX":8, "QZ":10}
+init_points = {"AEIOULNSTR":1, "DG":2, "BCMP": 3, "FHVWY":4, "K":5, "JX":8, "QZ":10}
 initString = "AAAAAAAAABBCCDDDDEEEEEEEEEEEEFFGGGHHIIIIIIIIIJKLLLLMMNNNNNNOOOOOOOOPPQRRRRRRSSSSTTTTTTUUUUVVWWXYYZ~~"
 
 class Tile:
 	def __init__(self, letter):
 		self.let = letter
 		val = 0	
-		for key in initPoints:
+		for key in init_points:
 			if self.let in key:
-				val = initPoints[key]
+				val = init_points[key]
 		self.val = val
 	def update(self, letter):
 		self.let = letter
-		for key in initPoints:
+		for key in init_points:
 			if self.let in key:
-				self.val = initPoints[key]
+				self.val = init_points[key]
 	def letter(self):
 		return self.let
 	def value(self):
@@ -26,7 +26,7 @@ class Tile:
 		return self.letter()
 	def __str__(self):
 		return self.letter()
-	def isLetter(self):
+	def is_letter(self):
 		return self.letter().upper() in initString
 
 
